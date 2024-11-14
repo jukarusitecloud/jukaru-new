@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 'use client'
 
 import { useState } from 'react'
@@ -8,12 +7,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
 
-  const handleChange = (e) => {
+  // 型注釈を追加
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prevData) => ({ ...prevData, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  // 型注釈を追加
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // mailtoリンクを構成
     const subject = encodeURIComponent("お問い合わせ")
@@ -77,7 +78,7 @@ export default function ContactPage() {
                 id="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="4"
+                rows={4}
                 className="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:ring focus:ring-blue-200 focus:border-blue-500"
                 required
               />
