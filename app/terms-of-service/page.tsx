@@ -104,7 +104,7 @@ export default function TermsOfServicePage() {
       {/* 戻るボタン */}
       <div className="text-center mt-8">
         <button
-          onClick={() => window.history.back()}
+          onClick={() => router.back()}
           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-all duration-300"
         >
           戻る
