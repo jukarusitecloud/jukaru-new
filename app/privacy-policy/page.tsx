@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation'
 
 export default function PrivacyPolicyPage() {
+    const router = useRouter();
+    
     return (
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-3xl font-bold text-center mb-8">プライバシーポリシー</h1>
@@ -45,14 +47,14 @@ export default function PrivacyPolicyPage() {
         </p>
 
       {/* 戻るボタン */}
-      <div className="text-center mt-8">
-        <button
-          onClick={() => window.history.back()}
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-all duration-300"
-        >
-          戻る
-        </button>
+        <div className="text-center mt-8">
+          <button
+            onClick={() => router.back()}
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-all duration-300"
+          >
+            戻る
+          </button>
+        </div>
       </div>
-    </div>
-  )
+    )
 }
