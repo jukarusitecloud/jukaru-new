@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation'
 
 export default function LegalNoticePage() {
+    const router = useRouter();
+
     return (
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-3xl font-bold text-center mb-8">特定商取引法に基づく表記</h1>
@@ -36,7 +38,7 @@ export default function LegalNoticePage() {
       {/* 戻るボタン */}
       <div className="text-center mt-8">
         <button
-          onClick={() => window.history.back()}
+          onClick={() => router.back()}
           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-all duration-300"
         >
           戻る
